@@ -12,7 +12,7 @@ trait PaginatorSort {
 			$orderBy = ['direction' => 'asc', 'sort' => 'id'];
 		}
 
-		if (!is_array($orderBy)) {
+		if (is_string($orderBy)) {
 			list($sort, $direction) = explode(' ', $orderBy);
 			$orderBy = compact('sort', 'direction');
 		}
